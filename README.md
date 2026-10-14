@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 VerdePro — PWA per Giardinieri Professionisti
 
-## Getting Started
+**VerdePro** è un'applicazione web progressiva (PWA) progettata specificamente per i professionisti della manutenzione del verde e del giardinaggio sul campo.
 
-First, run the development server:
+Risolve i 6 problemi reali e quotidiani della gestione sul campo ("UX da furgone"):
+
+1. 📅 **Gestione Calendario Ricorrente + "Riempi-Buchi"**: Gestione interventi ogni 2/3/4 settimane. Se un cliente rinvia l'appuntamento, il sistema calcola le ore liberate e propone all'istante i lavori sporadici compatibili in lista d'attesa.
+2. ⚡ **Calcolatore Live di Fine Lavoro + "Modalità Vista Cliente"**: Calcolo rapido `(Operai × Ore × Tariffa) + Smaltimento + Concimazione + Ricambi extra`. Toggle "Mostra al Cliente" che trasforma l'app in ricevuta pulita a schermo intero con tasti giganti **PAGATO ORA** o **DA PAGARE**.
+3. 💶 **Controllo Sospesi & Incasso Rapido**: Monitoraggio dei crediti con solleciti precompilati su WhatsApp in un tap e incasso immediato sul posto (Contanti, Bonifico, POS).
+4. 🌱 **Tracciamento Automatico Concimazioni (Scadenziario Agronomico)**: Semaforo visivo (Verde / Giallo / Rosso) basato sul tempo trascorso dall'ultima concimazione per non perdere mai il giro delle stagioni.
+5. ⛽ **Spese Lampo & Analisi "Compra a Pedana"**: Bottoni 1-tap per micro-uscite (pop-up, turbina, bar, carburante) e parser per frasi naturali (*"20 turbina 10 pop up 5 bar"*). Include l'Alert Risparmio Ingrosso che calcola il risparmio effettivo acquistando bancali/pedane intere di concime.
+6. 💡 **Simulatore Canone Fisso Mensile**: Analizza lo storico a chiamata degli ultimi 12 mesi, calcola la media reale e suggerisce un canone fisso con margine di sicurezza per fidelizzare i clienti senza rischiare di andare in perdita.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **Linguaggio**: [TypeScript](https://www.typescriptlang.org/)
+- **UI & Stili**: [Tailwind CSS v4](https://tailwindcss.com/) — Palette Emerald & Amber, design mobile-first ad alto contrasto visibile sotto la luce del sole
+- **Icone**: [lucide-react](https://lucide.dev/)
+- **Persistenza**: React Context + `localStorage` con seed data realistici e pulsante "Ripristina Dati Demo"
+
+---
+
+## 🚀 Avvio Rapido
 
 ```bash
+# 1. Installa le dipendenze
+npm install
+
+# 2. Avvia il server di sviluppo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 3. Compilazione di produzione
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'app sarà disponibile all'indirizzo [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 PWA (Progressive Web App)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+VerdePro include il Web App Manifest (`/manifest.webmanifest`) e può essere installata come applicazione nativa sia su Android che su iOS (aggiungendola alla schermata Home).
